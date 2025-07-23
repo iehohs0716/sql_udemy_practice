@@ -103,7 +103,7 @@ SELECT ROW_NUMBER() OVER (
     ) rn,
     m.name,
     m.yearmonth,
-    COALESCE(sp.amount, 0)
+    COALESCE(sp.amount, 0) amount
 FROM my_matrix m
     LEFT JOIN sum_produced sp ON sp.id = m.id
     AND sp.yearmonth = m.yearmonth
