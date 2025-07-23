@@ -1,0 +1,30 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label":"コンテナの中に入る",
+            "type": "shell",
+            "command": "docker exec -it sql_udemy_practice-db-1 mysql -uroot -proot"
+        },
+        {
+            "label":"サンプルクエリの実行",
+            "type": "shell",
+            "command": "./execute_query.sh query/sample.sql"
+        },
+        {
+            "label":"クエリの実行(ファイル名指定)",
+            "type": "shell",
+            "command": "./execute_query.sh ${input:sqlPath}"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "sqlPath",
+            "description": "sqlファイルを指定してください",
+            "default": "query/sample.sql",
+            "type": "promptString"
+        }
+    ]
+}
