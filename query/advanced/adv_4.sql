@@ -107,5 +107,6 @@ SELECT ROW_NUMBER() OVER (
 FROM my_matrix m
     LEFT JOIN sum_produced sp ON sp.id = m.id
     AND sp.yearmonth = m.yearmonth
-ORDER BY rn ASC -- 都道府県 and 月ごとの客単価平均を求める(月が歯抜けになることは許されない)
-    -- 行番号, 都道府県名, 客単価平均
+ORDER BY rn ASC;
+-- 都道府県 and 月ごとの客単価平均を求める(月が歯抜けになることは許されない)
+-- 行番号, 都道府県名, 客単価平均
