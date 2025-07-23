@@ -12,5 +12,7 @@ JOIN my_db.prefectures p
     ON p.id = u.prefecture_id
 WHERE
     p.name = '東京都'
+    AND EXTRACT(YEAR from o.order_time) = 2017
+    AND EXTRACT(MONTH from o.order_time) = 1
 ORDER BY order_id ASC
 ;
